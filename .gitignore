@@ -35,3 +35,11 @@ out/
 
 ### VS Code ###
 .vscode/
+
+/.gradle/6.8/executionHistory/executionHistory.bin
+/.gradle/6.8/executionHistory/executionHistory.lock
+/.gradle/6.8/fileHashes/fileHashes.bin
+/.gradle/6.8/fileHashes/fileHashes.lock
+/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+/.gradle/buildOutputCleanup/outputFiles.bin
+/.idea/gradle.xml
