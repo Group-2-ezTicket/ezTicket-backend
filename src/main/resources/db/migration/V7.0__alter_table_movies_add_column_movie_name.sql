@@ -1,0 +1,2 @@
+ALTER TABLE movies
+ADD movieName VARCHAR(50) NOT NULL;
