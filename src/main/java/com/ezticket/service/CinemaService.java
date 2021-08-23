@@ -13,6 +13,6 @@ public class CinemaService {
     private CinemaRepository cinemaRepository;
 
     public List<Cinema> getAllCinemas(){
-        return null;
+        return cinemaRepository.findAll();
     }
 }
