@@ -1,6 +1,7 @@
 package com.ezticket.service;
 
 import com.ezticket.model.Cinema;
+import com.ezticket.model.Movie;
 import com.ezticket.repository.CinemaRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +15,9 @@ public class CinemaService {
 
     public List<Cinema> getAllCinemas(){
         return cinemaRepository.findAll();
+    }
+
+    public List<Movie> getMoviesByCinemaId(Integer cinemaId) {
+        return cinemaRepository.findById(cinemaId).get().getMovies();
     }
 }

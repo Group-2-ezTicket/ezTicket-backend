@@ -4,9 +4,11 @@ package com.ezticket.controller;
 import com.ezticket.dto.CinemaResponse;
 import com.ezticket.mapper.CinemaMapper;
 import com.ezticket.model.Cinema;
+import com.ezticket.model.Movie;
 import com.ezticket.service.CinemaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,5 +32,10 @@ public class CinemaController {
     @GetMapping
     public List<Cinema> getAllCinemas() {
         return cinemaService.getAllCinemas();
+    }
+
+    @GetMapping("/{cinemaId}/movies")
+    public List<Movie> getMoviesByCinema(@PathVariable Integer cinemaId){
+        return cinemaService.getMoviesByCinemaId(cinemaId);
     }
 }
