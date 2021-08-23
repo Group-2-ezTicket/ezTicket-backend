@@ -1,0 +1,15 @@
+language: java
+dist: trusty
+jdk:
+- oraclejdk8
+before_script:
+- "./gradlew test"
+script:
+- "./gradlew build"
+deploy:
+  provider: heroku
+  api_key:
+    secure: TcEtIk3OOwVijn5VSariwngs+sh38SjJqcYURyGqU5ZLxoRa0BlLxlnGt0PQtmmULywmeocZWfVgeIwd4ZuB77+Br+TcO+j0MIHACfgJFhzReffX2CbXpRvwRZjz57omUngxk0QX3mOYaKExgXXsJ4spduJzJ4onlqEAftyIWj3lFbFaQfBzCrQ/eSM9vvCsv2KD0QwUca8EkYx2PA/39Zb3LzjqWfhJ5cEP9c63lYXANz1EnEHf42uZKFdiKv7CmQIDPmwrpFkh9ODQfP/2WhfyyetHWuf+OiEyFgbnOIjZvRtzHJGXxRfKYei2XI99A4NXEX2PxpWHRVarMYP/P+d4Ulb5Ln6u01HGwmmD1lGVw5//k7vHlKHf5DPIiY1sJJyuxPQJVo3uD5w86aa/LNPUFQo3vRIcNLI4HjrGn0agyCrg/8m5n8r+QIYWQ250xqFMP0GDJrvIeWC2CpvW7A0y4+KgFjhutHXL3BfDYs1UThWodE2zfAYW4VU4f/ymn7RimN0ObYow/i4j3mSZCuiourn6bFeRQTG3dwLOkUfLSMwO7ssRBSWI68dXkSRe4O803Pi07n9TQQjJJ1TCaiCJooAs081ixbj+KwL04Y5IRMZlJ3fFew0pVtTjNQk/l5iyWRVMhToYBEr3/yjiTaLhYliMiEcSSMVXRn8YPEc=
+  app: group2-ita06-ezticket-backend
+  on:
+    repo: Group-2-ezTicket/ezTicket-backend
