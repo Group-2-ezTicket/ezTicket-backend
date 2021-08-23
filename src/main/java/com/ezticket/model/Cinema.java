@@ -1,6 +1,7 @@
 package com.ezticket.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Cinema {
@@ -10,6 +11,9 @@ public class Cinema {
     private Integer cinemaId;
     @Column(name="NAME")
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "theaterId")
+    private List<Movie> movieList;
 
     public Cinema() {
 
@@ -38,5 +42,9 @@ public class Cinema {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Movie> getMovies() {
+        return movieList;
     }
 }
