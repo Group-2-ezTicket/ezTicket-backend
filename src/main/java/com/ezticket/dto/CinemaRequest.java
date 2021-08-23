@@ -1,17 +1,35 @@
 package com.ezticket.dto;
 
 public class CinemaRequest {
-    private String cinema_name;
+    private String name;
+    private Integer cinemaId;
 
-    public CinemaRequest(String cinema_name) {
-        this.cinema_name = cinema_name;
+    public CinemaRequest(String name) {
+        this.name = name;
     }
 
-    public String getCinema_name() {
-        return cinema_name;
+    public CinemaRequest(){
+
     }
 
-    public void setCinema_name(String cinema_name) {
-        this.cinema_name = cinema_name;
+    public CinemaRequest(String name, Integer cinemaId) {
+        this.cinemaId = cinemaId;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getCinemaId() {
+        return cinemaId;
+    }
+
+    public void setCinemaId(Integer cinemaId) {
+        this.cinemaId = cinemaId;
     }
 }
