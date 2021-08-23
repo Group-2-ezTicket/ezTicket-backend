@@ -1,6 +1,7 @@
 package com.ezticket.controller;
 
 
+import com.ezticket.dto.MovieResponse;
 import com.ezticket.mapper.MovieMapper;
 import com.ezticket.model.Movie;
 import com.ezticket.service.MovieService;
@@ -21,8 +22,8 @@ public class MovieController {
     private MovieMapper movieMapper;
 
     @GetMapping
-    public List<Movie> getMovieInfo(){
-        return movieService.getAllMovieInfo();
+    public List<MovieResponse> getMovieInfo(){
+        return movieMapper.toResponse(movieService.getAllMovieInfo());
     }
 
 }
