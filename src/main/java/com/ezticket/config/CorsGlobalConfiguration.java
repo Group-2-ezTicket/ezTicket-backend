@@ -14,6 +14,7 @@ public class CorsGlobalConfiguration {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:3000")
+                        .allowedOrigins("https://group2-ita06-ezticket-frontend.herokuapp.com")
                         .allowedMethods("GET","POST","PUT","DELETE");
             }
         };
