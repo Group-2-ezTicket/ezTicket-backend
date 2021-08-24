@@ -32,6 +32,12 @@ public class ScheduleController {
         return scheduleMapper.toResponse(scheduleService.getAllSchedules());
     }
 
+
+    @GetMapping(params = {"cinemaId","movieId"})
+    public List<ScheduleResponse> getSchedulesByCinemaIdAndMovieId(@RequestParam Integer cinemaId, @RequestParam Integer movieId){
+        return scheduleMapper.toResponse(scheduleService.getSchedulesByCinemaIdAndMovieId(cinemaId,movieId));
+    }
+
     @GetMapping(params = {"cinemaId"})
     public List<Schedule> getAllSchedulesByCinemaId(@RequestParam Integer cinemaId){
         return scheduleService.getSchedulesByCinemaId(cinemaId);

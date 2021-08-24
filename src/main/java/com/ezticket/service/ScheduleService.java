@@ -46,4 +46,9 @@ public class ScheduleService {
         List<Integer> schedules = getSchedulesByCinemaId(cinemaId).stream().map(schedule -> schedule.getMovieId()).collect(Collectors.toList());
         return movieRepository.findAll().stream().filter(movie -> schedules.contains(movie.getMovieId())).collect(Collectors.toList());
     }
+
+    public List<Schedule> getSchedulesByCinemaIdAndMovieId(Integer cinemaId, Integer movieId) {
+        return scheduleRepository.findAll().stream().filter(schedule -> (schedule.getCinemaId().equals(cinemaId) && schedule.getMovieId().equals(movieId))).collect(Collectors.toList());
+
+    }
 }
