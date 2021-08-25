@@ -15,6 +15,7 @@ public class MovieMapper {
     public MovieResponse toResponse(Movie movie){
         MovieResponse movieResponse = new MovieResponse();
         BeanUtils.copyProperties(movie, movieResponse);
+        movieResponse.setId(movie.getMovieId());
         return movieResponse;
     }
 

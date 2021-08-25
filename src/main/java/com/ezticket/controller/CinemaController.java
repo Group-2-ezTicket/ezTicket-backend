@@ -18,24 +18,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/cinemas")
 public class CinemaController {
-    private final List<Cinema> cinemas = new ArrayList<>();
+
     @Autowired
     private CinemaService cinemaService;
+
     @Autowired
     private CinemaMapper cinemaMapper;
-
-//    @GetMapping
-//    public List<CinemaResponse> getAllCinemas() {
-//        return cinemaMapper.toResponse(cinemaService.getAllCinemas());
-//    }
 
     @GetMapping
     public List<Cinema> getAllCinemas() {
         return cinemaService.getAllCinemas();
     }
 
-    @GetMapping("/{cinemaId}/movies")
-    public List<Movie> getMoviesByCinema(@PathVariable Integer cinemaId){
-        return cinemaService.getMoviesByCinemaId(cinemaId);
-    }
 }
