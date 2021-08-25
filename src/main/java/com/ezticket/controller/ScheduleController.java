@@ -29,13 +29,13 @@ public class ScheduleController {
     private CinemaService cinemaService;
 
     @GetMapping
-    public List<ScheduleResponse> getAllSchedules(){
-        return scheduleMapper.toResponse(scheduleService.getAllSchedules());
+    public List<Schedule> getAllSchedules(){
+        return scheduleService.getAllSchedules();
     }
 
     @GetMapping(params = {"cinemaId","movieId"})
-    public List<ScheduleResponse> getSchedulesByCinemaIdAndMovieId(@RequestParam Integer cinemaId, @RequestParam Integer movieId){
-        return scheduleMapper.toResponse(scheduleService.getSchedulesByCinemaIdAndMovieId(cinemaId,movieId));
+    public List<Schedule> getSchedulesByCinemaIdAndMovieId(@RequestParam Integer cinemaId, @RequestParam Integer movieId){
+        return scheduleService.getSchedulesByCinemaIdAndMovieId(cinemaId,movieId);
     }
 
     @GetMapping(params = {"cinemaId"})
