@@ -1,0 +1,2 @@
+DELETE FROM SEAT;
+ALTER TABLE seat ADD seatcode char(10) NOT NULL;
