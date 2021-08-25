@@ -12,9 +12,6 @@ public class Cinema {
     @Column(name="NAME")
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "theaterId")
-    private List<Movie> movieList;
-
     public Cinema() {
 
     }
@@ -44,7 +41,4 @@ public class Cinema {
         this.name = name;
     }
 
-    public List<Movie> getMovies() {
-        return movieList;
-    }
 }
