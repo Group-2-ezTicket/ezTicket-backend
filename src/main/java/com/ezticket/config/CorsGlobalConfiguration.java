@@ -13,9 +13,9 @@ public class CorsGlobalConfiguration {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000")
-                        .allowedOrigins("https://group2-ita06-ezticket-frontend.herokuapp.com")
-                        .allowedOrigins("https://ezticket-fe-production.herokuapp.com")
+                        .allowedOrigins("http://localhost:3000",
+                                "https://group2-ita06-ezticket-frontend.herokuapp.com",
+                                "https://ezticket-fe-production.herokuapp.com")
                         .allowedMethods("GET","POST","PUT","DELETE");
             }
         };
