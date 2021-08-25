@@ -1,25 +1,32 @@
 package com.ezticket.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Seat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name="SEATID")
+    private int seatId;
+    @Column(name="SCHEDULEID")
     private int scheduleId;
+    @Column(name="ORDERID")
     private int orderId;
+    @Column(name="SEATCODE")
+    private String seatCode;
 
-    public int getId() {
-        return id;
+
+    public Seat(){
+
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getSeatId() {
+        return seatId;
+    }
+
+    public void setSeatId(int seatId) {
+        this.seatId = seatId;
     }
 
     public int getScheduleId() {
@@ -36,5 +43,13 @@ public class Seat {
 
     public void setOrderId(int orderId) {
         this.orderId = orderId;
+    }
+
+    public String getSeatCode() {
+        return seatCode;
+    }
+
+    public void setSeatCode(String seatCode) {
+        this.seatCode = seatCode;
     }
 }
