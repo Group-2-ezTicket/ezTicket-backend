@@ -12,7 +12,7 @@ public class SeatService {
     @Resource
     private SeatRepository seatRepository;
 
-    private List<Seat> getAllSeats(){
+    public List<Seat> getAllSeats(){
         return seatRepository.findAll();
     }
 }
