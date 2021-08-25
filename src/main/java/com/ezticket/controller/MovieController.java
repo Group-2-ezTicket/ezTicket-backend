@@ -3,7 +3,6 @@ package com.ezticket.controller;
 
 import com.ezticket.dto.MovieResponse;
 import com.ezticket.mapper.MovieMapper;
-import com.ezticket.model.Movie;
 import com.ezticket.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,12 +22,12 @@ public class MovieController {
     private MovieMapper movieMapper;
 
     @GetMapping
-    public List<MovieResponse> getMovieInfo(){
+    public List<MovieResponse> getMovieInfo() {
         return movieMapper.toResponse(movieService.getAllMovieInfo());
     }
 
-    @GetMapping(path="/{movieId}")
-    public MovieResponse getMovieById(@PathVariable Integer movieId){
+    @GetMapping(path = "/{movieId}")
+    public MovieResponse getMovieById(@PathVariable Integer movieId) {
         return movieMapper.toResponse(movieService.getMovieById(movieId));
     }
 
