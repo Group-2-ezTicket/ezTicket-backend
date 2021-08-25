@@ -1,0 +1,9 @@
+2021-08-25 09:54:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE MOVIES 
+SET SYNOPSIS = 'Set in a beautiful seaside town on the Italian Riviera, the original animated feature is a coming-of-age story about one young boy experiencing an unforgettable summer filled with gelato, pasta and endless scooter rides. Luca shares these adventures with his newfound best friend, but all the fun is threatened by a deeply held secret: he is a sea monster from another world just below the water's surface.',
+DURATION = 120 
+WHERE MOVIETITLE = 'Luca[*]';"; SQL statement:
+UPDATE MOVIES 
+SET SYNOPSIS = 'Set in a beautiful seaside town on the Italian Riviera, the original animated feature is a coming-of-age story about one young boy experiencing an unforgettable summer filled with gelato, pasta and endless scooter rides. Luca shares these adventures with his newfound best friend, but all the fun is threatened by a deeply held secret: he is a sea monster from another world just below the water's surface.',
+DURATION = 120 
+WHERE MOVIETITLE = 'Luca'; [42000-200]

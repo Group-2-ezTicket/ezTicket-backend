@@ -30,4 +30,9 @@ public class CinemaController {
         return cinemaService.getAllCinemas();
     }
 
+    @GetMapping(path = "/{cinemaId}")
+    public Cinema getCinemaById(@PathVariable Integer cinemaId){
+        return cinemaService.getCinemaById(cinemaId);
+    }
+
 }
