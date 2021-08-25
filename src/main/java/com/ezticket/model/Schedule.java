@@ -19,13 +19,16 @@ public class Schedule {
     private Time timeEnd;
     @Column(name="SELECTEDDATE")
     private Date selectedDate;
+    @Column(name="CINEMAID")
+    private Integer cinemaId;
 
-    public Schedule(Integer scheduleId, Integer movieId, Time timeStart, Time timeEnd, Date selectedDate) {
+    public Schedule(Integer scheduleId, Integer movieId, Time timeStart, Time timeEnd, Date selectedDate, Integer cinemaId) {
         this.scheduleId = scheduleId;
         this.movieId = movieId;
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
         this.selectedDate = selectedDate;
+        this.cinemaId = cinemaId;
     }
 
     public Schedule() {
@@ -70,5 +73,13 @@ public class Schedule {
 
     public void setSelectedDate(Date selectedDate) {
         this.selectedDate = selectedDate;
+    }
+
+    public Integer getCinemaId() {
+           return cinemaId;
+    }
+
+    public void setCinemaId(Integer cinemaId) {
+        this.cinemaId = cinemaId;
     }
 }

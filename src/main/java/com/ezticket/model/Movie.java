@@ -9,8 +9,6 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="MOVIEID")
     private Integer movieId;
-    @Column(name="THEATREID")
-    private Integer theaterId;
     @Column(name="MOVIETITLE")
     private String movieTitle;
     private String synopsis;
@@ -19,8 +17,7 @@ public class Movie {
     private String genre;
     private Integer price;
 
-    public Movie(Integer theaterId, String movieTitle, String synopsis, Integer rating, Integer duration, String genre, Integer price) {
-        this.theaterId = theaterId;
+    public Movie(String movieTitle, String synopsis, Integer rating, Integer duration, String genre, Integer price) {
         this.movieTitle = movieTitle;
         this.synopsis = synopsis;
         this.rating = rating;
@@ -37,14 +34,6 @@ public class Movie {
 
     public void setMovieId(Integer movieId) {
         this.movieId = movieId;
-    }
-
-    public Integer getTheaterId() {
-        return theaterId;
-    }
-
-    public void setTheaterId(Integer theaterId) {
-        this.theaterId = theaterId;
     }
 
     public String getMovieTitle() {

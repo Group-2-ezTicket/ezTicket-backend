@@ -1,6 +1,7 @@
 package com.ezticket.dto;
 
 public class MovieResponse {
+    private Integer id;
     private String movieTitle;
     private String synopsis;
     private Integer rating;
@@ -8,7 +9,8 @@ public class MovieResponse {
     private String genre;
     private Integer price;
 
-    public MovieResponse(String movieTitle, String synopsis, Integer rating, Integer duration, String genre, Integer price) {
+    public MovieResponse(Integer movieId, String movieTitle, String synopsis, Integer rating, Integer duration, String genre, Integer price) {
+        this.id = movieId;
         this.movieTitle = movieTitle;
         this.synopsis = synopsis;
         this.rating = rating;
@@ -19,6 +21,13 @@ public class MovieResponse {
 
     public MovieResponse(){}
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getMovieTitle() {
         return movieTitle;
