@@ -5,6 +5,7 @@ import com.ezticket.mapper.FoodMapper;
 import com.ezticket.service.FoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +23,10 @@ public class FoodController {
     @GetMapping
     private List<FoodResponse> getAllFoods() {
         return foodMapper.toResponse(foodService.getAllFoods());
+    }
+
+    @GetMapping(path = "/{foodId}")
+    public FoodResponse getFoodById(@PathVariable Integer foodId){
+        return foodMapper.toResponse(foodService.getFoodById(foodId));
     }
 }

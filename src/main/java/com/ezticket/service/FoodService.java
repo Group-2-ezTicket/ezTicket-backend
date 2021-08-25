@@ -16,4 +16,7 @@ public class FoodService {
         return foodRepository.findAll();
     }
 
+    public Food getFoodById(Integer foodId) {
+        return foodRepository.findById(foodId).orElse(null);
+    }
 }
