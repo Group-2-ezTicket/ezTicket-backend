@@ -4,6 +4,7 @@ import com.ezticket.dto.ScheduleResponse;
 import com.ezticket.mapper.ScheduleMapper;
 import com.ezticket.model.Cinema;
 import com.ezticket.model.Movie;
+import com.ezticket.model.Order;
 import com.ezticket.model.Schedule;
 import com.ezticket.service.CinemaService;
 import com.ezticket.service.ScheduleService;
@@ -28,14 +29,13 @@ public class ScheduleController {
     private CinemaService cinemaService;
 
     @GetMapping
-    public List<ScheduleResponse> getAllSchedules(){
-        return scheduleMapper.toResponse(scheduleService.getAllSchedules());
+    public List<Schedule> getAllSchedules(){
+        return scheduleService.getAllSchedules();
     }
 
-
     @GetMapping(params = {"cinemaId","movieId"})
-    public List<ScheduleResponse> getSchedulesByCinemaIdAndMovieId(@RequestParam Integer cinemaId, @RequestParam Integer movieId){
-        return scheduleMapper.toResponse(scheduleService.getSchedulesByCinemaIdAndMovieId(cinemaId,movieId));
+    public List<Schedule> getSchedulesByCinemaIdAndMovieId(@RequestParam Integer cinemaId, @RequestParam Integer movieId){
+        return scheduleService.getSchedulesByCinemaIdAndMovieId(cinemaId,movieId);
     }
 
     @GetMapping(params = {"cinemaId"})
@@ -57,7 +57,6 @@ public class ScheduleController {
     public List<Movie> getMoviesByCinemaId(@RequestParam Integer cinemaId) {
         return scheduleService.getAllMoviesByCinemaId(cinemaId);
     }
-
 
 
 }
