@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
@@ -21,4 +22,17 @@ public class OrderService {
         return orderRepository.findById(orderId).orElse(null);
     }
 
+    public Order updateOrder(String transactionId, Order order) {
+        Order updateOrder =  orderRepository.findAll()
+                                .stream()
+                .filter(findOrder -> findOrder.getTransactionId().equals(transactionId))
+                .findFirst()
+                .orElse(null);
+        return orderRepository.save(updateOrderStatus(updateOrder, order));
+    }
+
+    public Order updateOrderStatus(Order order, Order orderUpdated){
+        order.setOrderStatus(orderUpdated.getOrderStatus());
+        return order;
+    }
 }

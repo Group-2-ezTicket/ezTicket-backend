@@ -22,6 +22,8 @@ public class OrderController {
         return orderService.findOrderByOrderId(orderId);
     }
 
-
-
+    @PutMapping(path = "/{transactionId}")
+    public Order updateOrder(@PathVariable String transactionId, @RequestBody Order order) {
+        return orderService.updateOrder(transactionId, order);
+    }
 }
