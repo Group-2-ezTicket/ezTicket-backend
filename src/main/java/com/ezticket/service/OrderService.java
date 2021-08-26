@@ -5,7 +5,6 @@ import com.ezticket.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -22,6 +21,9 @@ public class OrderService {
         return orderRepository.findById(orderId).orElse(null);
     }
 
+    public Order getOrdersByTransactionId(String transactionId) {
+        return orderRepository.findAll().stream().filter(order -> order.getTransactionId().equals(transactionId)).findFirst().orElse(null);
+    }
     public Order updateOrder(String transactionId, Order order) {
         Order updateOrder =  orderRepository.findAll()
                                 .stream()
