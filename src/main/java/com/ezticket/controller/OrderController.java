@@ -6,6 +6,8 @@ import com.ezticket.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
@@ -22,6 +24,11 @@ public class OrderController {
         return orderService.findOrderByOrderId(orderId);
     }
 
+
+    @GetMapping(params = {"transactionId"})
+    public Order getOrdersByTransactionId(@RequestParam String transactionId){
+        return orderService.getOrdersByTransactionId(transactionId);
+    }
 
 
 }
